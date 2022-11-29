@@ -16,6 +16,12 @@ export const App = () => {
   // set interval for intro app
   const [isIntroLogo, setIsIntroLogo] = useState(true);
 
+  const [favs, setFavs] = useState([])
+
+  const handleFav = favArray => {
+    setFavs(favArray);
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setIsIntroLogo(false);
@@ -56,7 +62,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={isIntroLogo ? <IntroLogo /> : <Home handleOpenModal={handleOpenModal} />} />
           <Route path='/success' element={<PlaceOrderDone />} />
-          <Route path='/favs' element={<Favs handleOpenModal={handleOpenModal} />} />
+          <Route path='/favs' element={<Favs handleOpenModal={handleOpenModal} favs={favs} handleFav={handleFav}/>} />
           <Route path='/profile' element={<Profile />} />
           <Route path='*' element={<h1>404 Not Found</h1>} />
         </Routes>

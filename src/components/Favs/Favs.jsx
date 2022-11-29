@@ -4,14 +4,11 @@ import { Products } from '../Products/Products';
 import { Header } from '../index';
 import styles from './favs.module.css';
 
-export const Favs = ({ handleOpenModal }) => {
-
-    const [favs, setFavs] = useState([])
-
+export const Favs = ({ handleOpenModal, favs, handleFav }) => {
     useEffect(() => {
         getLikes()
-            .then((res) => setFavs(res))
-    }, [favs])
+            .then((res) => handleFav(res))
+    }, [favs, handleFav]);
 
     return (
         <>
