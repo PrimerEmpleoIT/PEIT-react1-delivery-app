@@ -2,14 +2,12 @@
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     box-sizing: border-box;
-    /*position: absolute;*/
     list-style: none;
     background: #FECA57;
     margin: 0.5vh 17px 17px 17px;
     padding: 34px;
     border-radius: 10px;
     max-height: 7.75rem;
-    /* 124px */
     display: grid;
     row-gap: 24px;
     grid-template-columns: auto 110px;

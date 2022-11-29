@@ -51,17 +51,17 @@
 }
 
 .formSubmit {
-    background: #22cd33;
-    color: #fff;
-    font-weight: bold;
+    background: #31B9CC;
+    color: #0A191E;
+    font-size: 1rem;
+    font-weight: 600;
     display: inline-block;
-    border-radius: 16px;
+    border-radius: 10px;
     border: none;
-    padding: 1.5rem;
+    padding: 1.4rem;
     width: fit-content;
     line-height: 0;
     margin-left: auto;
     position: relative;
-    bottom: 12px;
     right: 20px;
 }
