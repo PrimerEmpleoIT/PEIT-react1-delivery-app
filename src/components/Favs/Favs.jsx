@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { getLikes } from '../../services';
+import React, { useContext } from 'react';
+import { FavsContext } from '../../FavsContext/FavsContext';
 import { Products } from '../Products/Products';
 import { Header } from '../index';
 import styles from './favs.module.css';
 
-export const Favs = ({ handleOpenModal, favs, handleFav }) => {
-    useEffect(() => {
-        getLikes()
-            .then((res) => handleFav(res))
-    }, [favs, handleFav]);
+export const Favs = ({ handleOpenModal }) => {
+    const {favs} = useContext(FavsContext);
 
     return (
         <>

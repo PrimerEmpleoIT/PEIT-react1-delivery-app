@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import styles from './CardModal.module.css'
 import cartIcon from '../../assets/cart.svg'
 import { postCart, postLikes , deleteLike , getLikes } from '../../services'
 import { CartState } from '../../CartContext/CartContext'
+import { FavsContext } from '../../FavsContext/FavsContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons'
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons'
@@ -10,6 +11,7 @@ import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons'
 export const CardModal = ({ card, product, opened, setOpened, id }) => {
 
   const { state: { cart }, dispatch } = CartState()
+  const { updateFavs } = useContext(FavsContext);
 
   const [modal, setModal] = useState(false)
   const [added, setAdded] = useState(false)
@@ -31,14 +33,16 @@ export const CardModal = ({ card, product, opened, setOpened, id }) => {
     opened === id ? setModal(true) : setModal(false)
   }, [opened, id])
 
-  const handleLike = ()=>{
+  /* Checks if the product was liked, and updates the favs list */
+  useEffect(() => {
+    updateFavs();
+  }, [liked, updateFavs]);
 
+  const handleLike = ()=>{
     liked ? deleteLike(product.id) : postLikes (product);
     setLiked(!liked);
-
   }
 
-  
   return (
     <>
       {!modal ?

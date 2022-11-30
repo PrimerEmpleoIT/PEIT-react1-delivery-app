@@ -4,13 +4,16 @@ import './index.css';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 import { CartContext } from './CartContext/CartContext';
+import { FavsContextWrapper } from './FavsContext/FavsContext';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <CartContext>
-      <App />
+      <FavsContextWrapper>      
+        <App />
+      </FavsContextWrapper>
     </CartContext>
   </React.StrictMode>
 );
