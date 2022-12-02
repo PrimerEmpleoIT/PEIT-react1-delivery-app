@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './addressForm.module.css';
-import arrow from '../../assets/flechaRigth.svg';
 
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -19,6 +18,7 @@ const AddressForm = ({handleInfoSubmit}) => {
             addressStreet: Yup.string()
                 .max(30, "Street name is too long.")
                 .required("Field required.")
+                // eslint-disable-next-line
                 .matches(/^[-@'À-ÖØ-öø-ÿ.\/#&\w\s]*$/, "Invalid input."),
             addressNumber: Yup.number()
                 .min(1, "Invalid input.")
