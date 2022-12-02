@@ -18,6 +18,7 @@ const AddressForm = ({handleInfoSubmit}) => {
             addressStreet: Yup.string()
                 .max(30, "Street name is too long.")
                 .required("Field required.")
+                // eslint-disable-next-line
                 .matches(/^[-@'À-ÖØ-öø-ÿ.\/#&\w\s]*$/, "Invalid input."),
             addressNumber: Yup.number()
                 .min(1, "Invalid input.")
@@ -109,8 +110,8 @@ const AddressForm = ({handleInfoSubmit}) => {
                        onBlur={ formik.handleBlur }
                        placeholder="Ex: flat on a corner" />
             </div>
-            <button className={styles.formSubmit}
-                    type='submit'>Save</button>
+                <button className={styles.formSubmit}
+                        type='submit'>Save Info</button>
         </form>
     );
 }
