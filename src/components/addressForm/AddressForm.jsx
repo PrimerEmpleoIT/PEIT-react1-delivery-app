@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './addressForm.module.css';
+import arrow from '../../assets/flechaRigth.svg';
 
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -109,8 +110,8 @@ const AddressForm = ({handleInfoSubmit}) => {
                        onBlur={ formik.handleBlur }
                        placeholder="Ex: flat on a corner" />
             </div>
-            <button className={styles.formSubmit}
-                    type='submit'>Save</button>
+                <button className={styles.formSubmit}
+                        type='submit'>Save Info</button>
         </form>
     );
 }

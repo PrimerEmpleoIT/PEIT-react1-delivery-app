@@ -16,6 +16,8 @@ export const CardModal = ({ card, product, opened, setOpened, id }) => {
   const [modal, setModal] = useState(false)
   const [added, setAdded] = useState(false)
   const [liked, setLiked] = useState(false)
+
+  console.log("a2");
   
   /* Checking if the item is in the cart. */
   useEffect(() => {
